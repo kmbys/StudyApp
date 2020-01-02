@@ -15,7 +15,7 @@ jobs:
           node-version: 12.x
       - run: cd frontend/StudyApp
       - run: npm install
-      - run: yarn build
+      - run: ng build
       - uses: actions/aws/cli@master
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
