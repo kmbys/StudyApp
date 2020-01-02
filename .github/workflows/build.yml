@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12.x
+      - run: npm install -g @angular/cli 
       - run: cd frontend/StudyApp
       - run: npm install
       - run: ng build
