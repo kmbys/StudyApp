@@ -9,6 +9,10 @@ import { FooterViewComponent } from './footer-view/footer-view.component';
 import { SectionListViewComponent } from './section-list-view/section-list-view.component';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DetailsViewComponent } from './details-view/details-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatGridListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeaderViewComponent,
     SlideViewComponent,
     FooterViewComponent,
-    SectionListViewComponent
+    SectionListViewComponent,
+    DetailsViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxDocViewerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

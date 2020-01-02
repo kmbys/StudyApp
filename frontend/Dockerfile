@@ -1,6 +1,5 @@
-FROM sandrokeil/typescript
+FROM node:12.14.0
 
-RUN apk update && apk add bash vim
 RUN npm update -y && npm install -g @angular/cli
 
 CMD "node"
