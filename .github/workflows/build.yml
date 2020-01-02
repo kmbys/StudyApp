@@ -13,14 +13,14 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12.x
-      - run: ls && pwd && ls
-      - run: cd frontend/StudyApp
-      - run: ls
       - run: npm install
+        working-directory: ./frontend/StudyApp
       - run: ng build
+        working-directory: ./frontend/StudyApp
       - uses: actions/aws/cli@master
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
         with:
-          args: s3 sync dist/ s3://study-app-mock --delete
+          args: s3 sync ./frontend/StudyApp/dist/ s3://study-app-mock --delete
+
