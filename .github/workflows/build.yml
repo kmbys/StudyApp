@@ -1,11 +1,11 @@
-name: Upload to S3
+name: StudyApp CI/CD
 on:
   push:
     branches:
       - master
 
 jobs:
-  deploy:
+  deploy-frontend:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
