@@ -15,6 +15,7 @@ ENTITY "sections" {
     + id:CHAR(3) [PK]
     ==
     # presenter:VARCHER(255) [FK(accounts, email)]
+    summary:VARCHAR(255)
     resource_uri:VARCHER(255)
     start_time:DATETIME
     end_time:DATETIME
