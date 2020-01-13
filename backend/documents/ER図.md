@@ -40,4 +40,5 @@ ENTITY "comments" {
 studies --o{ sections
 accounts --o{ sections
 sections --o{ comments
+accounts --o{ comments
 @enduml```
