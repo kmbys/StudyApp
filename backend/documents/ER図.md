@@ -15,7 +15,7 @@ ENTITY "sections" {
     + id:CHAR(3) [PK]
     ==
     # presenter:VARCHER(255) [FK(accounts, email)]
-    summary:VARCHAR(255)
+    summary:TEXT
     resource_uri:VARCHER(255)
     start_time:DATETIME
     end_time:DATETIME
@@ -35,7 +35,7 @@ ENTITY "comments" {
     ==
     # author:VARCHAR(255) [FK(accounts, email)]
     post_time:DATETIME
-    comment:VARCHAR(255)
+    comment:TEXT
 }
 
 studies --o{ sections
