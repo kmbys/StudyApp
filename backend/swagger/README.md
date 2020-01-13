@@ -74,7 +74,7 @@ File > Import File > ファイルを選択 > swagger/openapi.yml
 File > Save as Yaml
 ```
 
-5. `swagger/openapi.yaml`と置き換える
+5. `backend/swagger/openapi.yml`と置き換える
 
 6. コンテナの再起動
 ```
