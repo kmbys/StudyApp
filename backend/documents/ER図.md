@@ -3,22 +3,21 @@
 ```uml
 @startuml
 ENTITY "studies" {
-    + id:CHAR [PK]
+    + id:CHAR(12) [PK]
     ==
     place:VARCHER
-    date:DATE
-    start:TIME
-    end:TIME
+    start:DATETIME
+    end:DATETIME
 }
 
-ENTITY "presentations" {
+ENTITY "sections" {
     # study_id:CHAR [PK][FK(studies, id)]
-    + id:CHAR [PK]
+    + id:CHAR(3) [PK]
     ==
     presenter:VARCHER
-    file_name:VARCHER
-    start:TIME
-    end:TIME
+    resource_uri:VARCHER
+    start:DATETIME
+    end:DATETIME
 }
 
 studies --o{ presentations
