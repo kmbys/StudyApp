@@ -20,5 +20,5 @@ ENTITY "sections" {
     end:DATETIME
 }
 
-studies --o{ presentations
+studies --o{ sections
 @enduml```
