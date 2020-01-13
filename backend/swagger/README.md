@@ -4,12 +4,12 @@
 ## ディレクトリ構成
 ```
 .
+backend
 ├── README.md
-├── docker-compose.yml
 ├── nginx
 │   └── default.conf
 └── swagger
-    └── openapi.yaml
+    └── openapi.yml
 ```
 
 
@@ -64,7 +64,7 @@ $ open http://localhost:8081
 
 2. `openapi.yaml`を読み込む
 ```
-File > Import File > ファイルを選択 > swagger/openapi.yaml
+File > Import File > ファイルを選択 > swagger/openapi.yml
 ```
 
 3. `swagger-editor`で編集を行う
