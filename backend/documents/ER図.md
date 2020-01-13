@@ -6,8 +6,8 @@ ENTITY "studies" {
     + id:CHAR(12) [PK]
     ==
     place:VARCHER
-    start:DATETIME
-    end:DATETIME
+    start_time:DATETIME
+    end_time:DATETIME
 }
 
 ENTITY "sections" {
@@ -16,8 +16,8 @@ ENTITY "sections" {
     ==
     # presenter:VARCHER(255) [FK(accounts, email)]
     resource_uri:VARCHER
-    start:DATETIME
-    end:DATETIME
+    start_time:DATETIME
+    end_time:DATETIME
 }
 
 ENTITY "accounts" {
@@ -27,6 +27,17 @@ ENTITY "accounts" {
     password_hash:VARCHAR(255)
 }
 
+ENTITY "comments" {
+    # study_id:CHAR(12) [PK][FK(sections, study_id)]
+    # section_id:CHAR(3) [PK][FK(sections, id)]
+    + id:CHAR(12) [PK]
+    ==
+    # author:VARCHAR(255) [FK(accounts, email)]
+    post_time:DATETIME
+    comment:VARCHAR
+}
+
 studies --o{ sections
 accounts --o{ sections
+sections --o{ comments
 @enduml```
