@@ -5,7 +5,7 @@
 ENTITY "studies" {
     + id:CHAR(12) [PK]
     ==
-    place:VARCHER
+    place:VARCHER(255)
     start_time:DATETIME
     end_time:DATETIME
 }
@@ -15,7 +15,7 @@ ENTITY "sections" {
     + id:CHAR(3) [PK]
     ==
     # presenter:VARCHER(255) [FK(accounts, email)]
-    resource_uri:VARCHER
+    resource_uri:VARCHER(255)
     start_time:DATETIME
     end_time:DATETIME
 }
@@ -34,7 +34,7 @@ ENTITY "comments" {
     ==
     # author:VARCHAR(255) [FK(accounts, email)]
     post_time:DATETIME
-    comment:VARCHAR
+    comment:VARCHAR(255)
 }
 
 studies --o{ sections
