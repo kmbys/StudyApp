@@ -1,8 +1,10 @@
 package com.studyapp.api.service
 
 import com.studyapp.api.domain.Section
+import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
+@Service
 class SectionService {
     fun find(studyId: String, sectionId: String): Section {
         return Section("Java初級",
