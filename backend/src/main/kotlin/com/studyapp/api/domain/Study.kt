@@ -9,8 +9,8 @@ class Study(private val name: String, private val startTime: LocalDateTime,
 
     fun toResponse(): StudyResponse {
         return StudyResponse(name,
-                startTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm")),
-                endTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm")),
+                startTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd H:mm")),
+                endTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd H:mm")),
                 sectionIds)
     }
 }
