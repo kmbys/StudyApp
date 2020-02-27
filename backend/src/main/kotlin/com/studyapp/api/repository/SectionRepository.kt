@@ -9,15 +9,18 @@ interface SectionRepository {
     @Select("""
         SELECT
             name,
-            presenter,
+            display_name AS presenter,
             summary,
             resource_uri AS resourceUri,
             start_time AS startTime,
             end_time AS endTime
         FROM
-            sections
+            sections,
+            accounts
         WHERE
-            study_id = #{studyId} AND id = #{sectionId}
+            study_id = #{studyId} AND
+            id = #{sectionId} AND
+            sections.presenter = accounts.email
     """)
     fun find(studyId: String, sectionId: String): SectionDto
 }
