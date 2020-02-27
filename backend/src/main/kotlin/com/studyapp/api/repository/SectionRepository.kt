@@ -23,4 +23,14 @@ interface SectionRepository {
             sections.presenter = accounts.email
     """)
     fun find(studyId: String, sectionId: String): SectionDto
+
+    @Select("""
+        SELECT
+            id
+        FROM
+            sections
+        WHERE
+            study_id = #{studyId}
+    """)
+    fun findSectionIds(studyId: String): List<String>
 }
