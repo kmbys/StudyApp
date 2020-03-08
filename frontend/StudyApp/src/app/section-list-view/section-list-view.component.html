@@ -1,9 +1,9 @@
     <div class="list-group" style="position: absolute; top: 50px; width: 30%;height:70vh">
-        <div *ngFor="let section of sections">
-            <a href="#" class="list-group-item list-group-item-action">
-                セクション名：{{section.title}}<br />
-                <small>担当者名： {{section.name}}</small> <br />
-                <small> {{section.startTime}}(現在時刻)/{{section.endTime}}(予定終了時刻)</small>
+        <div *ngFor="let sectionInfo of sectionInfos; let i = index;">
+            <a href="#" class="list-group-item list-group-item-action" (click)="outIndex(i)">
+                セクション名：{{sectionInfo?.name}}<br />
+                <small>担当者名： {{sectionInfo?.presenter}}</small> <br />
+                <small> {{sectionInfo?.startTime}}/{{sectionInfo?.endTime}}</small>
             </a>
         </div>
     </div>

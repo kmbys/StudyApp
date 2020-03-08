@@ -1,9 +1,24 @@
 <div class="main" fxLayout="column">
-  <app-header-view></app-header-view>
+  <app-header-view 
+    [title]="title">
+  </app-header-view>
   <div fxLayout="row">
-    <app-slide-view fxFlex fxLayoutAlign="center center"></app-slide-view>
-    <app-section-list-view fxFlex="30%"></app-section-list-view>
+    <app-slide-view 
+      [sectionInfos]="sectionInfos" 
+      [index]="index" 
+      fxFlex 
+      fxLayoutAlign="center center">
+    </app-slide-view>
+    <app-section-list-view 
+      fxFlex="30%" 
+      [sectionInfos]="sectionInfos"
+      (event)="onReceiveEventFromChild($event)">
+    </app-section-list-view>
   </div>
-  <app-details-view></app-details-view>
-  <app-footer-view></app-footer-view>
+  <app-details-view 
+    [sectionInfos]="sectionInfos" 
+    [index]="index">
+  </app-details-view>
+  <app-footer-view>
+  </app-footer-view>
 </div>

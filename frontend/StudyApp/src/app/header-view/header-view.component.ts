@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header-view',
@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderViewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  private title: string;
 
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b><dt>
+   * <dd>デフォルトコンストラクタ</dd>
+   * </dl>
+   *
+   */
+  constructor() {}
+
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b></dt>
+   * <dd>初期化<dd>
+   * </dl>
+   *
+   */
   ngOnInit() {
   }
-
 }

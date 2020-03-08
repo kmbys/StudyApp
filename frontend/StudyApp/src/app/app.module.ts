@@ -13,6 +13,10 @@ import { DetailsViewComponent } from './details-view/details-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonService } from './service/common.service';
+import { MdToHtmlPipe } from './pipe/md-to-html.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { MatGridListModule } from '@angular/material';
     SlideViewComponent,
     FooterViewComponent,
     SectionListViewComponent,
-    DetailsViewComponent
+    DetailsViewComponent,
+    MdToHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,13 @@ import { MatGridListModule } from '@angular/material';
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatGridListModule
+    MatGridListModule,
+    ScrollingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

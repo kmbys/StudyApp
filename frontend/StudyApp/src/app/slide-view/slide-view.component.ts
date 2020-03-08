@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { SectionInfo } from '../model/sectionInfo';
 
 @Component({
   selector: 'app-slide-view',
@@ -7,12 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideViewComponent implements OnInit {
 
-  viewer = "office";
-  doc = "http://www.wakhok.ac.jp/~tatsuo/java2005/2shuu/java1-2.ppt";
+  @Input()
+  private sectionInfos: Array<SectionInfo>;
 
+  @Input()
+  private index;
+
+  viewer = 'office';
+
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b><dt>
+   * <dd>デフォルトコンストラクタ</dd>
+   * </dl>
+   *
+   */
   constructor() { }
 
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b></dt>
+   * <dd>初期化<dd>
+   * </dl>
+   *
+   */
   ngOnInit() {
   }
-
 }

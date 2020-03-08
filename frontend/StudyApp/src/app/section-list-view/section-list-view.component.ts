@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SectionInfo } from '../model/sectionInfo';
 
 @Component({
   selector: 'app-section-list-view',
@@ -7,31 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionListViewComponent implements OnInit {
 
-  sections = [
-    {
-      title: 'Java 初級',
-      name: '相良　涼介',
-      startTime: '14:00',
-      endTime: '15:00',
-    },
-    {
-      title: 'Java 中級',
-      name: '二瓶　由伸',
-      startTime: '15:00',
-      endTime: '16:00',
-    },
-    {
-      title: 'Java 上級',
-      name: '三上　俊',
-      startTime: '17:00',
-      endTime: '18:00',
-    }
-  ];
+  @Input()
+  private sectionInfos: Array<SectionInfo>;
+
+  @Output()
+  private index = 0;
+
+  @Output()
+  private event = new EventEmitter<number>();
 
   constructor() {
   }
 
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b></dt>
+   * <dd>初期化<dd>
+   * </dl>
+   *
+   */
   ngOnInit() {
+  }
 
+  /**
+   * <dl>
+   * <dt><b>メソッド概要: </b></dt>
+   * <dd>セクションの位置を親コンポーネントに送信<dd>
+   * </dd>
+   *
+   * @param i セクションの選択位置
+   */
+  outIndex(i: number) {
+    this.event.emit(i);
   }
 }
